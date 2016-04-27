@@ -1,0 +1,19 @@
+<script src="jquery.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#btn1").click(function () {
+            var texto = $("#txt1").val();
+            $("#txt1").val("");
+            var div = $("<div>");
+            div.text(texto);
+            div.append("<button>Delete</button>");
+            div.find("button").click(function () {
+                $(this).parent().remove();
+            });
+            $("#lista").append(div);
+        });
+    });
+</script>
+<input type="text" id="txt1">
+<button id="btn1"> Add</button>
+<div id="lista"></div>
